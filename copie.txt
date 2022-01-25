@@ -1,0 +1,74 @@
+import React from 'react';
+
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {  
+
+            visibility: false,
+            // article: ""
+
+        };
+
+        this.getArticleBlog = this.getArticleBlog.bind(this);
+    };
+
+    getArticleBlog = () => {
+
+        this.setState({
+
+            visibility: !this.state.visibility,
+            // article: this.props.articleContent
+
+        })
+
+    }
+
+    render() { 
+
+        // switcher entre le rendu visible et non visible de l'article quand on clique dessus
+        let article = "";
+
+        if(this.state.visibility){
+
+            article = this.props.articleContent;
+
+        }
+
+        else{
+
+            article = "";
+
+        };
+
+        // permet de rendre dynamiquement les données saisis par l'utilisateur (titre et auteur du blog)
+        const items = this.props.blogContent.map(x => <div onClick={this.getArticleBlog} className="title-author-blog-list">
+            
+            <li className="title-blog-list" key={x[0]}>{x[0]}</li>
+            <li className="author-blog-list" key={x[1]}>Written by {x[1]}</li>
+            <li><p>{article}</p></li>
+
+            </div>)
+
+            // Si on clique sur le "lien" pour afficher le Home
+            return (  
+
+                <div id="home-container">
+    
+                    <div id="home-content">
+                        
+                        <ul>{items}</ul>
+
+                    </div>
+     
+                </div>
+    
+            );
+
+
+
+    }
+}
+ 
+export default Home;

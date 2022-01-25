@@ -1,0 +1,714 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand&family=Yanone+Kaffeesatz&display=swap');
+/* End Google Font */
+
+/* Reset CSS */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* End Reset CSS */
+
+
+/* Font Family Variable */
+:root{
+    --font-primary: 'Quicksand', sans-serif;
+    --font-secondary: 'Yanone Kaffeesatz', sans-serif; 
+    --font-navigation: 'Bebas Neue', cursive; 
+}
+/* End Font Family Variable */
+
+
+
+/* Style Général */
+html{
+    font-size: 10px;
+}
+
+body{
+    background-color: black;
+}
+
+h1{
+    color: white;
+    font-size: 3rem;
+    font-family: var(--font-secondary);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p{
+    color: white;
+    font-size: 1.5rem;
+    font-family: var(--font-primary);
+    text-align: center;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+/* End Style Général */
+
+
+/* Section Header */
+.header{
+    width: 100%;
+    height: 10vh;
+    background-color: black;
+}
+
+.header-container{
+    max-width: 1300px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.home-icon-container{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container i{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.header-container i:hover{
+    transform: scale(1.2);
+}
+
+.hamburger-menu{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease;
+}
+
+.hamburger-menu:hover{
+    transform: scale(1.2);
+}
+
+.header-container .hamburger-menu .bar{
+    width: 20px;
+    height: 1px;
+    background-color: white;
+    position: relative;
+}
+
+.header-container .hamburger-menu .bar::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 5px;
+    transition: 0.2s ease bottom;
+}
+
+.header-container .hamburger-menu .bar::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    transition: 0.2s ease top;
+}
+
+.hamburger-menu.active .bar::before{
+    bottom: 0;
+}
+
+.hamburger-menu.active .bar::after{
+    top: 0;
+}
+
+.hamburger-menu.active{
+    overflow: hidden;
+}
+/* End Section Header */
+
+
+/* Section Navigation */
+.navigation{
+    position: fixed;
+    width: 0;
+    height: 95vh;
+    right: 100%;
+    top: 68px;
+    background-color: black;
+    border-top: 1px solid white;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.navigation ul{
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.navigation ul li a{
+    font-family: var(--font-navigation);
+    font-size: 5rem;
+    letter-spacing: 10px;
+    color: black;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: white;
+    transition: 0.3s ease color;
+    padding: 20px;
+}
+
+.navigation ul li a:hover{
+    color: white;
+}
+
+.navigation.active{
+    right: 0;
+    width: 100%;
+}
+
+.navigation.active ul{
+    display: flex;
+}
+
+/* End Section Navigation */
+
+
+/* Section Home */
+main.active .home{
+    display: none;
+}
+
+.home{
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    background-color: black;
+}
+
+.home-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.home .photo-container img{
+    display: initial;
+    border-radius: 81% 19% 73% 27% / 34% 71% 29% 66% ;
+    max-width: 240px;
+    max-height: 320px;
+    transform: scale(0.8);
+}
+
+.home-text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-text-container p{
+    margin-bottom: 15px;
+}
+
+.home-text-container p span{
+    font-family: var(--font-secondary);
+}
+
+.short-bio-container{
+    max-width: 600px;
+}
+
+.home-text-container a{
+    font-family: var(--font-navigation);
+    font-size: 5rem;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: black;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: white;
+    transition: 0.3s ease color;
+}
+
+.home a:hover{
+    color: white;
+}
+/* End Section Home */
+
+
+
+/* Section A Propos */
+main.active .a-propos{
+    display: none;
+}
+
+.a-propos{
+    min-height: 90vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-propos-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.a-propos p{
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+/* End Section A Propos */
+
+
+/* Section Contact */
+main.active .contact{
+    display: none;
+}
+
+.contact{
+    height: 90vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.contact h1{
+    margin-bottom: 20px;
+}
+
+.contact p{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contact p:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: -30px;
+    background-color: rgb(0,255,127);
+    transition: 0.3s ease;
+}
+
+.contact p:nth-child(2):hover:before{
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    border: 3px solid rgb(0,255,127);
+}
+/* End Section Contact */
+
+
+
+/* Section Projets */
+main.active .projets{
+    display: none;
+}
+
+.projets{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.projets-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 50px 20px; 
+}
+
+.projet-item{
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid white;
+    padding: 20px;
+    margin: 0 auto 20px auto;
+}
+
+.projet-item h1{
+    font-size: 2.3rem;
+}
+
+.projet-item p{
+    font-size: 1.2rem;
+}
+
+.projet-item a{
+    font-size: 1.5rem;
+    font-family: var(--font-primary);
+    color: white;
+    border: 1px solid white;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.projet-item a:hover{
+    font-weight: bold;
+    background-color: white;
+    color: black;
+}
+/* End Section Projets */
+
+
+/* Media Query Tablettes */
+@media screen and (min-width: 768px) {
+    /* Style Général */
+    p{
+        font-size: 2.5rem;
+    }
+
+    /* End Style Général */
+
+    /* Section Header */
+    .header-container .hamburger-menu .bar{
+        width: 30px;
+    }
+
+    .header-container .hamburger-menu .bar::before{
+        bottom: 10px;
+    }
+
+    .header-container .hamburger-menu .bar::after{
+        top: 10px;
+    }
+
+    .hamburger-menu.active .bar::before{
+        bottom: 0;
+    }
+    
+    .hamburger-menu.active .bar::after{
+        top: 0;
+    }
+
+    .header-container i{
+        font-size: 2.8rem;
+    }
+    /* End Section Header */
+
+    /* Section Navigation */
+    .navigation ul li a{
+        font-size: 7rem;
+    }
+    /* End Section Navigation */
+
+
+    /* Section Home */
+    .home .photo-container img{
+        transform: scale(1);
+        margin-bottom: 20px;
+    }
+
+    .home p{
+        margin-bottom: 20px;
+    }
+
+    .short-bio-container{
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .short-bio-container p{
+        text-align: center;
+    }
+
+    .home a{
+        font-size: 7rem;
+    }
+    /* End Section Home */
+
+    /* Section A Propos */
+    .a-propos{
+        height: 90vh;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .a-propos-container{
+        max-width: 800px;
+    }
+
+    .a-propos p{
+        line-height: 40px;
+        margin-bottom: 30px;
+    }
+    /* End Section A Propos */
+
+    /* Section Contact */
+    .contact h1{
+        margin-bottom: 40px;
+        font-size: 6rem;
+    }
+    
+    .contact p{
+        margin-bottom: 40px;
+    }
+
+    .contact p:nth-child(2)::before{
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        left: -40px;
+        background-color: rgb(0,255,127);
+        transition: 0.3s ease;
+    }
+    
+    .contact p:nth-child(2):hover:before{
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        border: 5px solid rgb(0,255,127);
+    }
+    /* End Section Contact */
+
+    /* Section Projets */
+    .projet-item{
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid white;
+        padding: 20px;
+        margin: 0 auto 30px auto;
+    
+    }
+
+    .projet-item h1{
+        font-size: 3rem;
+    }
+
+    .projet-item p{
+        font-size: 1.5rem;
+    }
+    
+    .projet-item a{
+        font-size: 1.5rem;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 10px;
+        display: inline-block;
+    }
+    /* End Section Projets */
+}
+/* End Media Query Tablettes */
+
+
+/* Media Query Ecran Large */
+@media screen and (min-width: 1200px) {
+    /* Style Général */
+    p{
+        font-size: 3rem;
+    }
+
+    /* End Style Général */
+
+    /* Section Header */
+    .header-container .hamburger-menu .bar{
+        width: 40px;
+    }
+
+    .header-container .hamburger-menu .bar::before{
+        bottom: 15px;
+    }
+
+    .header-container .hamburger-menu .bar::after{
+        top: 15px;
+    }
+
+    .hamburger-menu.active .bar::before{
+        bottom: 0;
+    }
+    
+    .hamburger-menu.active .bar::after{
+        top: 0;
+    }
+
+    .header-container i{
+        font-size: 3.5rem;
+    }
+    /* End Section Header */
+
+    /* Secton Navigation */
+    .navigation ul li a{
+        font-size: 10rem;
+    }
+    /* End Secton Navigation */
+
+    /* Section Home */
+    .home-container{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        max-width: 1300px;
+        padding: 0 0 0 30px;
+    }
+
+    .home-container .photo-container{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-container .photo-container img{
+        transform: scale(1.5);
+    }
+
+    .home-container .home-text-container{
+        align-items: flex-start;
+    }
+
+    .home-container .home-text-container p{
+        text-align: left;
+    }
+
+    .home-container .home-text-container a{
+        font-size: 10rem;
+    }
+
+    /* End Section Home */
+
+    /* Section A Propos */
+    .a-propos-container{
+        max-width: 1000px;
+    }
+
+    .a-propos p{
+        line-height: 40px;
+        margin-bottom: 25px;
+    }
+    /* End Section A Propos */
+
+    /* Section Contact */
+    .contact h1{
+        font-size: 10rem;
+    }
+
+    .contact p:nth-child(2)::before{
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        left: -50px;
+        background-color: rgb(0,255,127);
+        transition: 0.3s ease;
+    }
+    
+    .contact p:nth-child(2):hover:before{
+        width: 25px;
+        height: 25px;
+        background-color: black;
+        border: 7px solid rgb(0,255,127);
+    }
+    /* End Section Contact */
+
+    /* Section Projets */
+    .projets{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .projets-container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        column-gap: 20px;
+        padding: 50px 20px;
+        max-width: 1300px;
+    }
+    
+    .projet-item{
+        width: 100%;
+        max-width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid white;
+        padding: 20px;
+        margin: 0 auto 20px auto;
+    }
+
+    .projet-item p{
+        font-size: 1.8rem;
+    }
+    
+    .projet-item a{
+        font-size: 1.5rem;
+        color: white;
+        border: 1px solid white;
+        padding: 5px 10px;
+        display: inline-block;
+    }
+    /* End Section Projets */
+
+
+
+    
+
+
+}
+/* End Media Query Ecran Large */
+
+
+
+
+
